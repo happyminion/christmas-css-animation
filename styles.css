@@ -1,0 +1,274 @@
+/*General*/
+
+html, body{
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+/*Background*/
+
+#sky, #ground {
+    position: relative;
+}
+#sky {
+    height: 80%;
+    background-color: midnightblue;
+}
+#ground {
+    height: 20%;
+    background-color: white;
+}
+
+/*Moon & craters*/
+
+#moon {
+    position: absolute;
+    top: 10%;
+    right: 40%;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color:  #FEFCD7;
+    box-shadow: inset 20px -10px 0 0 #D6D5C0;
+}
+#crater1, #crater2, #crater3 {
+    border-radius: 50%;
+    background-color: #D6D5C0;
+    box-shadow: 0px 5px 3px 2px #bbb inset;
+}
+#crater1 {
+    position: absolute;
+    top: 15%;
+    right: 30%;
+    width: 60px;
+    height: 60px;
+}
+#crater2 {
+    position: absolute;
+    top: 30%;
+    right: 60%;
+    width: 30px;
+    height: 30px;
+}
+#crater3 {
+    position: absolute;
+    top: 40%;
+    right: 15%;
+    width: 100px;
+    height: 100px;
+}
+
+/*Santa & deers*/
+
+#santaRun, #santaSleigh {
+    position: absolute;
+    margin-top: 12%;
+}
+#santaSleigh {
+    margin-right: -600px;
+    width: 30%;
+    height: auto;
+    animation: slide 10s linear infinite;
+    -webkit-animation: slide 10s linear infinite;
+}
+#santaRun {
+    margin-right: -130px;
+    width: 123px;
+    height: 210px;
+    background: url('images/santa-run-sequence.png');
+    animation: santa 0.8s steps(9) infinite;
+    -webkit-animation: santa 0.8s steps(9) infinite;
+}
+#santaSlide {
+    animation: slide 10s linear 1.5s infinite backwards;
+    -webkit-animation: slide 10s linear 1.5s infinite backwards;
+}
+
+/*Houses*/
+
+.house {
+    margin-top: 2%;
+    width: 5%;
+    height: auto;
+}
+.houseUp {
+    animation: bounceUp 0.5s infinite backwards;
+    -webkit-animation: bounceUp 0.5s infinite backwards;
+}
+.houseDown {
+    animation: bounceDown 0.5s infinite backwards;
+    -webkit-animation: bounceDown 0.5s infinite backwards;
+}
+
+/*Animation deers*/
+
+@keyframes slide {
+    from {
+        transform: translateX(-600px);
+        -webkit-transform: translateX(-600px);
+    }
+    to {
+        transform: translateX(2000px);
+        -webkit-transform: translateX(2000px);
+    }
+}
+
+/*Animation Santa sprite*/
+
+@keyframes santa {
+    100% { background-position: -1155px;}
+}
+
+/*Animation houses bounce up*/
+
+@keyframes bounceUp {
+    0% {
+        transform: translate3d(0px, 0px, 0);
+        -webkit-transform: translate3d(0px, 0px, 0);
+    }
+    50% {
+        transform: translate3d(0px, -3px, 0);
+        -webkit-transform: translate3d(0px, -3px, 0);
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0);
+        -webkit-transform: translate3d(0px, 0px, 0);
+    }
+}
+
+/*Animation houses bounce down*/
+
+@keyframes bounceDown {
+    0% {
+        transform: translate3d(0px, 0px, 0);
+        -webkit-transform: translate3d(0px, 0px, 0);
+    }
+    50% {
+        transform: translate3d(0px, 3px, 0);
+        -webkit-transform: translate3d(0px, 3px, 0);
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0);
+        -webkit-transform: translate3d(0px, 0px, 0);
+    }
+}
+
+/*iPad Pro*/
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #moon {
+        top: 20%;
+        right: 33%;
+    }
+    #santaRun, #santaSleigh {
+        margin-top: 30%;
+    }
+    #santaSleigh {
+        width: 50%;
+    }
+    .house {
+        margin-top: 5%;
+        width: 10%;
+    }
+}
+
+/*iPad*/
+
+@media only screen and (min-width: 415px) and (max-width: 768px) {
+    #moon {
+        top: 20%;
+        right: 25%;
+    }
+    #santaRun {
+        margin-top: 30%;
+    }
+    #santaSleigh {
+        margin-top: 35%;
+        width: 50%;
+    }
+    .house {
+        margin-top: 5%;
+        width: 10%;
+    }
+}
+
+/*iPhone 6 Plus, Nexus 6P, Nexus 5X */
+
+@media only screen and (min-device-width: 412px) and (max-device-width: 414px) {
+    #moon {
+        width: 300px;
+        height: 300px;
+        top: 20%;
+        right: 15%;
+    }
+    #santaSleigh {
+        margin-top: 45%;
+        width: 80%;
+    }
+    #santaRun {
+        margin-top: 30%;
+        width: 123px;
+        height: 210px;
+        transform: scale(0.75);
+    }
+    .house {
+        margin-top: 5%;
+        width: 15%;
+    }
+}
+
+/*iPhone 6, Galaxy S5*/
+
+@media only screen and (min-device-width: 321px) and (max-device-width: 411px) {
+    #moon {
+        width: 300px;
+        height: 300px;
+        top: 20%;
+        right: 11%;
+    }
+
+    #santaSleigh {
+        margin-top: 45%;
+        width: 80%;
+    }
+
+    #santaRun {
+        margin-top: 30%;
+        width: 123px;
+        height: 210px;
+        transform: scale(0.75);
+    }
+
+    .house {
+        margin-top: 5%;
+        width: 15%;
+    }
+}
+
+/*iPhone 5*/
+
+@media only screen and (max-device-width: 320px) {
+        #moon {
+            width: 270px;
+            height: 270px;
+            top: 20%;
+            right: 7%;
+        }
+        #santaSleigh {
+            margin-top: 45%;
+            width: 80%;
+        }
+        #santaRun {
+            margin-top: 30%;
+            width: 123px;
+            height: 210px;
+            transform: scale(0.6);
+        }
+        .house {
+            margin-top: 5%;
+            width: 15%;
+        }
+
+    }
